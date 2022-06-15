@@ -88,7 +88,7 @@
           <i class='bx bx-cart-alt'></i>    
           <span class="links_name">CADASTRAR PRODUTO</span>
         </a>
-        <span class="tooltip">CADASTRAR PRODUT</span>
+        <span class="tooltip">CADASTRAR PRODUTO</span>
       </li>
       
             <a href="Login.php">

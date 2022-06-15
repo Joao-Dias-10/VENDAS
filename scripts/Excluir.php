@@ -14,28 +14,24 @@
     $var = $_GET["id"];
     //nome do relatorio
     $sub = substr($var, 1, 12);
-    //nome do arquivo
-    $nome = substr($var, 13);
 
     // deleta dados referentes do banco
-    $sql = "DELETE FROM arquivo WHERE codigo =  '$sub' ";
+    $sql = "DELETE FROM produtos WHERE codigo =  '$sub' ";
     //verifica se deleto
     if ($mysqli->query($sql) == TRUE) {
 
-
-        //move para e verifica se foi movido 
-        if (unlink('uploads/' . $nome)) {
+       
     ?>
 
             <script language='javascript'>
                 Swal.fire({
                     icon: 'success',
-                    title: 'Relatório excluido com sucesso!'
+                    title: 'Excluido com sucesso!'
                 }).then((result) => {
                     /* Read more about isConfirmed, isDenied below */
 
                     if (result.isConfirmed) {
-                        window.location.href = "../Baixar_grupo.php";
+                        window.location.href = "../ADM_produtos.php";
                     }
                 })
             </script>
@@ -43,25 +39,7 @@
 
 
         <?php
-        } else {
-        ?>
-            <script language='javascript'>
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Oops...',
-                    text: 'Não foi possivel fazer a exlusão do arquivo na pasta!'
-                }).then((result) => {
-                    /* Read more about isConfirmed, isDenied below */
-                    if (result.isConfirmed) {
-                        window.location.href = "..//Baixar_grupo.php";
-                    }
-                })
-            </script>
-
-
-        <?php
-        }
-    } else {
+        }  else {
         ?>
         <script language='javascript'>
             Swal.fire({
@@ -71,7 +49,7 @@
             }).then((result) => {
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
-                    window.location.href = "..//Baixar_grupo.php";
+                    window.location.href = "../ADM_produtos.php";
                 }
             })
         </script>

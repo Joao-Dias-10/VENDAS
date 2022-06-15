@@ -111,8 +111,7 @@
                                 </td>
                                 <td style="text-align:center">
 
-                                    <a href='scripts\Excluir.php?id="<?php echo $dados['codigo'];
-                                                                        echo $dados['arquivo']; ?>'>
+                                    <a href='scripts\Excluir.php?id="<?php echo $dados['codigo'] ?>'>
                                         <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
                                     </a>
 

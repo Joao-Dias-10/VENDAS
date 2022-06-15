@@ -36,6 +36,25 @@
 
         if (grupo($codigo, $nome) == 0) {
 
+            $codigo = $_POST['Codigo'];
+            $nome = $_POST['Nome'];
+            $qtd = $_POST['qtd'];
+        
+                // pegar qtd do banco e subtrair
+                $servidor = "127.0.0.1";
+                $usuario = "root";
+                $senha = "";
+                $banco = "vendas";
+                
+                //String de coneção
+                $conn = new mysqli($servidor,$usuario,$senha,$banco);
+                  
+
+$sql = "SELECT SUM(qtd) as qtd FROM estoque WHERE codigo = '$codigo'";
+$sql = $conn->query($sql);
+$row = $sql->fetch_assoc() ;
+$soma = $row['qtd'] - $qtd;
+$sub = $soma;
 
             // verificar se tem 
 
@@ -44,6 +63,9 @@
             include "config.php";
             $sql = "INSERT INTO venda (data,codigo,valor,qtd,produto) VALUES (NOW(),'$codigo','$vlor2','$qtd','$nome')";
             $query = $mysqli->query($sql);
+
+            $sql = "UPDATE estoque SET codigo='$codigo',data = NOW(),produto ='$nome', Qtd ='$sub' WHERE codigo IN ('$codigo') and produto IN ('$nome')";
+            $query = mysqli_query($mysqli, $sql);
 
     ?>
 
@@ -92,6 +114,35 @@
           
             include "config.php";
             $sql = "UPDATE venda SET data= NOW(),codigo = '$codigo',valor =' $soma', qtd =' $sub', produto='$nome' WHERE produto IN ('$nome')";
+            $query = mysqli_query($mysqli, $sql);
+
+            $codigo = $_POST['Codigo'];
+            $nome = $_POST['Nome'];
+            $qtd = $_POST['qtd'];
+        
+                // pegar qtd do banco e subtrair
+                $servidor = "127.0.0.1";
+                $usuario = "root";
+                $senha = "";
+                $banco = "vendas";
+                
+                //String de coneção
+                $conn = new mysqli($servidor,$usuario,$senha,$banco);
+                  
+
+$sql = "SELECT SUM(qtd) as qtd FROM estoque WHERE codigo = '$codigo'";
+$sql = $conn->query($sql);
+$row = $sql->fetch_assoc() ;
+$soma = $row['qtd'] - $qtd;
+$sub = $soma;
+
+            // verificar se tem 
+
+            // verificar se tem o suficiente
+
+            include "config.php";
+
+            $sql = "UPDATE estoque SET codigo='$codigo',data = NOW(),produto ='$nome', Qtd ='$sub' WHERE codigo IN ('$codigo') and produto IN ('$nome')";
             $query = mysqli_query($mysqli, $sql);
 
         ?>

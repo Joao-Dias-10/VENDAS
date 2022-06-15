@@ -14,13 +14,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="iuricode\assets\css\cardindex\card.css">
-    <link rel="icon" type="image/png" href="iuricode\assets\img\icons\excel (1).png"/>
+    <link rel="icon" type="image/png" href="iuricode\assets\img\icons\excel (1).png" />
 
 </head>
 
 <body>
-<?php include "Estrutura\menu.php"; ?>
-<div class="sidebar">
+    <?php include "Estrutura\menu.php"; ?>
+    <div class="sidebar">
         <div class="logo-details">
             <i class='bx bxl-c-plus-plus icon'></i>
             <div class="logo_name">SISTEMA</div>
@@ -63,20 +63,20 @@
                 <span class="tooltip">NOVO USUÁRIO</span>
             </li>
             <li>
-            <a href="ADM_CadrastEstoq.php">
-          <i class='bx bx-folder'></i>    
-          <span class="links_name">ATUALIZAR ESTOQUE</span>
-        </a>
-        <span class="tooltip">ATUALIZAR ESTOQUE</span>
-      </li>
-      <li>
-            <a href="ADM_cadastrarProduto.php">
-          <i class='bx bx-cart-alt'></i>    
-          <span class="links_name">CADASTRAR PRODUTO</span>
-        </a>
-        <span class="tooltip">CADASTRAR PRODUT</span>
-      </li>
-      
+                <a href="ADM_CadrastEstoq.php">
+                    <i class='bx bx-folder'></i>
+                    <span class="links_name">ATUALIZAR ESTOQUE</span>
+                </a>
+                <span class="tooltip">ATUALIZAR ESTOQUE</span>
+            </li>
+            <li>
+                <a href="ADM_cadastrarProduto.php">
+                    <i class='bx bx-cart-alt'></i>
+                    <span class="links_name">CADASTRAR PRODUTO</span>
+                </a>
+                <span class="tooltip">CADASTRAR PRODUT</span>
+            </li>
+
             <a href="Login.php">
                 <li class="profile">
 
@@ -97,137 +97,139 @@
     </div>
 
     <section class="home-section">
-    <center>
-        <H2>DASHBOARD ADM PRODUTOS </H2>
-        <div>
-            <div class="card"> 
-                <div class="card__image-holder">
-                    <img class="card__image" src="iuricode\assets\img\python.gif" alt="wave" />
-                </div>
-                <div class="card-title">
-                    <a href="Baixar_grupo.php" class="toggle-info btn">
-                        <span class="left"></span>
-                        <span class="right"></span>
-                    </a>
-                    <h2>
-                        CADASTRADOS
-                        <center>
-                        <small>
-                        <?php
-                    $servidor = "127.0.0.1";
-                    $usuario = "root";
-                    $senha = "";
-                    $banco = "vendas";
-                    
-                    //String de coneção
-                    $conn = new mysqli($servidor,$usuario,$senha,$banco);
-                    $sql = "SELECT * FROM login";
-                    if ($result=mysqli_query($conn,$sql)) {
-                        $rowcount=mysqli_num_rows($result);
-                        echo "<h5>0".$rowcount . "</h5>";
-                    }
-                
-                    //echo "<p><h5>Quantidade de Relatórios</p>" .
-                        //5 . "</h5>";
-                    ?>
-                        </small>
-                        </center>
-                    </h2>
-                </div>  
-                <div class="card-flap flap1">
-                   
-                    <div class="card-flap flap2">
-                        <div class="card-actions">
-                            <a href="Baixar_grupo.php" class="btn">Read more</a>
+        <center>
+            <H2>DASHBOARD ADM PRODUTOS </H2>
+            <div>
+                <div class="card">
+                    <div class="card__image-holder">
+                        <img class="card__image" src="iuricode\assets\img\python.gif" alt="wave" />
+                    </div>
+                    <div class="card-title">
+                        <a href="Baixar_grupo.php" class="toggle-info btn">
+                            <span class="left"></span>
+                            <span class="right"></span>
+                        </a>
+                        <h2>
+                            ESTOQUE
+                            <center>
+                                <small>
+                                    <?php
+                                    // pegar qtd do banco e subtrair
+                                    $servidor = "127.0.0.1";
+                                    $usuario = "root";
+                                    $senha = "";
+                                    $banco = "vendas";
+
+                                    //String de coneção
+                                    $conn = new mysqli($servidor, $usuario, $senha, $banco);
+
+
+                                    $sql = "SELECT SUM(qtd) as qtd FROM estoque WHERE codigo <> 0";
+                                    $sql = $conn->query($sql);
+                                    $row = $sql->fetch_assoc();
+                                    $som = $row['qtd'];
+                                    echo "<h5>" . $som . "</h5>";
+                                    ?>
+                                </small>
+                            </center>
+                        </h2>
+                    </div>
+                    <div class="card-flap flap1">
+
+                        <div class="card-flap flap2">
+                            <div class="card-actions">
+                                <a href="Baixar_grupo.php" class="btn">Read more</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="card__image-holder">
-                    <img class="card__image" src="iuricode\assets\img\python.gif" alt="wave" />
-                </div>
-                <div class="card-title">
-                    <a href="Baixar_grupo.php" class="toggle-info btn">
-                        <span class="left"></span>
-                        <span class="right"></span>
-                    </a>
-                    <h2>
-                    P. CADASTRADOS
-                    <center>
-                        <small>
-                        <?php
+                <div class="card">
+                    <div class="card__image-holder">
+                        <img class="card__image" src="iuricode\assets\img\python.gif" alt="wave" />
+                    </div>
+                    <div class="card-title">
+                        <a href="Baixar_grupo.php" class="toggle-info btn">
+                            <span class="left"></span>
+                            <span class="right"></span>
+                        </a>
+                        <h2>
+                            P. CADASTRADOS
+                            <center>
+                                <small>
+                                    <?php
 
-                        $servidor = "127.0.0.1";
-                        $usuario = "root";
-                        $senha = "";
-                        $banco = "vendas";
-                        
-                        //String de coneção
-                        $conn = new mysqli($servidor,$usuario,$senha,$banco);
-                        $sql = "SELECT * FROM produtos";
-                        if ($result=mysqli_query($conn,$sql)) {
-                            $rowcount=mysqli_num_rows($result);
-                            echo "<h5>0".$rowcount . "</h5>";
-                        }
-                
-                    //echo "<p><h5>Quantidade de Relatórios</p>" .
-                        //5 . "</h5>";
-                    ?>
-                        </small>
-                        </center>
-                    </h2>
-                </div>
-                <div class="card-flap flap1">
-                  
-                    <div class="card-flap flap2">
-                        <div class="card-actions">
-                            <a href="Baixar_grupo.php" class="btn">Read more</a>
+                                    $servidor = "127.0.0.1";
+                                    $usuario = "root";
+                                    $senha = "";
+                                    $banco = "vendas";
+
+                                    //String de coneção
+                                    $conn = new mysqli($servidor, $usuario, $senha, $banco);
+                                    $sql = "SELECT * FROM produtos";
+                                    if ($result = mysqli_query($conn, $sql)) {
+                                        $rowcount = mysqli_num_rows($result);
+                                        echo "<h5>0" . $rowcount . "</h5>";
+                                    }
+
+                                    //echo "<p><h5>Quantidade de Relatórios</p>" .
+                                    //5 . "</h5>";
+                                    ?>
+                                </small>
+                            </center>
+                        </h2>
+                    </div>
+                    <div class="card-flap flap1">
+
+                        <div class="card-flap flap2">
+                            <div class="card-actions">
+                                <a href="Baixar_grupo.php" class="btn">Read more</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card__image-holder">
-                    <img class="card__image" src="iuricode\assets\img\python.gif" alt="wave" />
+                <div class="card">
+                    <div class="card__image-holder">
+                        <img class="card__image" src="iuricode\assets\img\python.gif" alt="wave" />
+                    </div>
+                    <div class="card-title">
+                        <a href="Baixar_grupo.php" class="toggle-info btn">
+                            <span class="left"></span>
+                            <span class="right"></span>
+                        </a>
+                        <h2>
+                            QTD. VENDIDA
+                            <center>
+                                <small>
+                                    <?php
+                                    // pegar qtd do banco e subtrair
+                                    $servidor = "127.0.0.1";
+                                    $usuario = "root";
+                                    $senha = "";
+                                    $banco = "vendas";
+
+                                    //String de coneção
+                                    $conn = new mysqli($servidor, $usuario, $senha, $banco);
+
+
+                                    $sql = "SELECT SUM(qtd) as qtd FROM venda WHERE codigo <> 0";
+                                    $sql = $conn->query($sql);
+                                    $row = $sql->fetch_assoc();
+                                    $soma = $row['qtd'];
+                                    echo "<h5>" . $soma . "</h5>";
+
+                                    ?>
+                                </small>
+                            </center>
+                        </h2>
+                    </div>
+
+
                 </div>
-                <div class="card-title">
-                    <a href="Baixar_grupo.php" class="toggle-info btn">
-                        <span class="left"></span>
-                        <span class="right"></span>
-                    </a>
-                    <h2>
-                       ESTOQUE
-                       <center>
-                        <small>
-                        <?php
-                    $servidor = "127.0.0.1";
-                    $usuario = "root";
-                    $senha = "";
-                    $banco = "vendas";
-                    
-                    //String de coneção
-                    $conn = new mysqli($servidor,$usuario,$senha,$banco);
-                    $sql = "SELECT * FROM estoque";
-                    if ($result=mysqli_query($conn,$sql)) {
-                        $rowcount=mysqli_num_rows($result);
-                        echo "<h5>0".$rowcount . "</h5>";
-                    }
-                
-                    //echo "<p><h5>Quantidade de Relatórios</p>" .
-                        //5 . "</h5>";
-                    ?>
-                        </small>
-                        </center>
-                    </h2>
-                </div>
-
             </div>
-        </div>
-    </center>
+        </center>
 
 
 
-    <?php include "Estrutura\js.php"; ?>
-    <?php include "Estrutura\Footer.php"; ?>
+        <?php include "Estrutura\js.php"; ?>
+        <?php include "Estrutura\Footer.php"; ?>
