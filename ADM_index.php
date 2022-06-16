@@ -100,12 +100,157 @@
         <center>
             <H2>DASHBOARD ADM PRODUTOS </H2>
             <div>
+            <div class="card">
+                    <div class="card__image-holder">
+                        <img class="card__image" src="iuricode\assets\img\python.gif" alt="wave" />
+                    </div>
+                    <div class="card-title">
+                        <a href="ADM_VENDAS.php" class="toggle-info btn">
+                            <span class="left"></span>
+                            <span class="right"></span>
+                        </a>
+                        <h2>
+                            QTD. VENDIDA
+                            <center>
+                                <small>
+                                    <?php
+                                    // pegar qtd do banco e subtrair
+                                    $servidor = "127.0.0.1";
+                                    $usuario = "root";
+                                    $senha = "";
+                                    $banco = "vendas";
+
+                                    //String de coneção
+                                    $conn = new mysqli($servidor, $usuario, $senha, $banco);
+
+
+                                    $sql = "SELECT SUM(qtd) as qtd FROM venda WHERE codigo <> 0";
+                                    $sql = $conn->query($sql);
+                                    $row = $sql->fetch_assoc();
+                                    $soma = $row['qtd'];
+                                    echo "<h5>" . $soma . "</h5>";
+
+                                    ?>
+                                </small>
+                            </center>
+                        </h2>
+                    </div>
+
+
+                </div>
                 <div class="card">
                     <div class="card__image-holder">
                         <img class="card__image" src="iuricode\assets\img\python.gif" alt="wave" />
                     </div>
                     <div class="card-title">
-                        <a href="Baixar_grupo.php" class="toggle-info btn">
+                        <a href="ADM_VENDAS.php" class="toggle-info btn">
+                            <span class="left"></span>
+                            <span class="right"></span>
+                        </a>
+                        <h2>
+                            QTD. VENDIDA MÊS
+                            <center>
+                                <small>
+                                    <?php
+                                    // pegar qtd do banco e subtrair
+                                    $servidor = "127.0.0.1";
+                                    $usuario = "root";
+                                    $senha = "";
+                                    $banco = "vendas";
+
+                                    //String de coneção
+                                    $conn = new mysqli($servidor, $usuario, $senha, $banco);
+
+
+                                    $sql = "SELECT SUM(qtd) as qtd FROM venda WHERE codigo <> 0 and MONTH(data)= '06'";
+                                    $sql = $conn->query($sql);
+                                    $row = $sql->fetch_assoc();
+                                    $soma = $row['qtd'];
+                                    echo "<h5>" . $soma . "</h5>";
+
+                                    ?>
+                                </small>
+                            </center>
+                        </h2>
+                    </div>
+
+
+                </div>
+                <div class="card">
+                    <div class="card__image-holder">
+                        <img class="card__image" src="iuricode\assets\img\python.gif" alt="wave" />
+                    </div>
+                    <div class="card-title">
+                        <a href="ADM_VENDAS.php" class="toggle-info btn">
+                            <span class="left"></span>
+                            <span class="right"></span>
+                        </a>
+                        <h2>
+                            QTD. VENDIDA DIA
+                            <center>
+                                <small>
+                                    <?php
+                                    // pegar qtd do banco e subtrair
+                                    $servidor = "127.0.0.1";
+                                    $usuario = "root";
+                                    $senha = "";
+                                    $banco = "vendas";
+
+                                    //String de coneção
+                                    $conn = new mysqli($servidor, $usuario, $senha, $banco);
+
+
+                                    $sql = "SELECT SUM(qtd) as qtd FROM venda WHERE codigo <> 0 and DAY(data)= '16'";
+                                    $sql = $conn->query($sql);
+                                    $row = $sql->fetch_assoc();
+                                    $soma = $row['qtd'];
+                                    echo "<h5>" . $soma . "</h5>";
+
+                                    ?>
+                                </small>
+                            </center>
+                        </h2>
+                    </div>
+
+
+                </div>
+
+                
+                <div class="card">
+                    <div class="card__image-holder">
+                        <img class="card__image" src="iuricode\assets\img\python.gif" alt="wave" />
+                    </div>
+                    <div class="card-title">
+                        <a href="ADM_VENDAS.php" class="toggle-info btn">
+                            <span class="left"></span>
+                            <span class="right"></span>
+                        </a>
+                        <h2>
+                            TOP 10 VENDIDOS
+                            <center>
+                                <small>
+Verifique aqui ➱
+                                </small>
+                                
+                            </center>
+                        </h2>
+                    </div>
+                    <div class="card-flap flap1">
+
+                        <div class="card-flap flap2">
+                            <div class="card-actions">
+                                <a href="Baixar_grupo.php" class="btn">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="card">
+                    <div class="card__image-holder">
+                        <img class="card__image" src="iuricode\assets\img\python.gif" alt="wave" />
+                    </div>
+                    <div class="card-title">
+                        <a href="ADM_estoque.php" class="toggle-info btn">
                             <span class="left"></span>
                             <span class="right"></span>
                         </a>
@@ -138,7 +283,7 @@
 
                         <div class="card-flap flap2">
                             <div class="card-actions">
-                                <a href="Baixar_grupo.php" class="btn">Read more</a>
+                                <a href="ADM_produtos.php" class="btn">Read more</a>
                             </div>
                         </div>
                     </div>
@@ -188,44 +333,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card__image-holder">
-                        <img class="card__image" src="iuricode\assets\img\python.gif" alt="wave" />
-                    </div>
-                    <div class="card-title">
-                        <a href="Baixar_grupo.php" class="toggle-info btn">
-                            <span class="left"></span>
-                            <span class="right"></span>
-                        </a>
-                        <h2>
-                            QTD. VENDIDA
-                            <center>
-                                <small>
-                                    <?php
-                                    // pegar qtd do banco e subtrair
-                                    $servidor = "127.0.0.1";
-                                    $usuario = "root";
-                                    $senha = "";
-                                    $banco = "vendas";
 
-                                    //String de coneção
-                                    $conn = new mysqli($servidor, $usuario, $senha, $banco);
-
-
-                                    $sql = "SELECT SUM(qtd) as qtd FROM venda WHERE codigo <> 0";
-                                    $sql = $conn->query($sql);
-                                    $row = $sql->fetch_assoc();
-                                    $soma = $row['qtd'];
-                                    echo "<h5>" . $soma . "</h5>";
-
-                                    ?>
-                                </small>
-                            </center>
-                        </h2>
-                    </div>
-
-
-                </div>
             </div>
         </center>
 
