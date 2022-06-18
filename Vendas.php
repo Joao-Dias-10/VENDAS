@@ -53,46 +53,6 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 
 
-
-
-
-
-
-
-
-
-            <form class="form-inline left" name="GRUPO" method="POST">
-
-
-                <div class="col-md-12">
-
-
-
-                    <select name="GRUPO" id="filtro" name="filtro" class="form-control" onchange="this.form.submit()">
-                        <option id="cor" value="">OPERAÇÃO</option>
-
-                        <option value="ALTO VALOR">
-                            </h1>ALTO VALOR</h1>
-                        </option>
-
-                        <option value="NET">
-                            </h1>NET</h1>
-                        </option>
-                        <option value="EMPRESARIAL NET">
-                            </h1>EMPRESARIAL NET</h1>
-                        </option>
-                        <option value="CLARO">
-                            </h1>CLARO</h1>
-                        </option>
-                    </select>
-                </div>
-                <script>
-                    document.getElementById('filtro').addEventListener('change', function() {
-                        this.form.submit();
-                    });
-                </script>
-            </form>
-
         </div>
     </div>
 </nav>
@@ -154,7 +114,7 @@
             </a>
             <span class="tooltip">VENDIDO</span>
         </li>
-       
+
         <!-- <li>
             <a href="CadrastEstoq.php">
           <i class='bx bx-folder'></i>    
@@ -162,13 +122,13 @@
         </a>
         <span class="tooltip">ATUALIZAR ESTOQUE</span>
       </li> -->
-      <li>
+        <li>
             <a href="vender.php">
-          <i class='bx bx-cart-alt'></i>    
-          <span class="links_name">VERDER</span>
-        </a>
-        <span class="tooltip">VERDER</span>
-      </li>
+                <i class='bx bx-cart-alt'></i>
+                <span class="links_name">VERDER</span>
+            </a>
+            <span class="tooltip">VERDER</span>
+        </li>
         <!-- <li>
         <a href="#">
           <i class='bx bx-heart'></i>
@@ -197,81 +157,81 @@
 
 <section class="home-section">
 
-<section class="TABELA">
-    <center>
-        <div>
-            <h2>VENDAS</h2>
-        </div>
-    </center>
-    <div class="container-fluid">
-        <div class="row">
+    <section class="TABELA">
+        <center>
+            <div>
+                <h2>VENDAS</h2>
+            </div>
+        </center>
+        <div class="container-fluid">
+            <div class="row">
 
-            <section class="content">
-                <div>
-                    <h3></h3>
-                </div>
+                <section class="content">
+                    <div>
+                        <h3></h3>
+                    </div>
 
-                <table class="table" id="mytable">
-                    <thead>
-                        <tr>
-                            <th style="text-align: center">Data</th>
-                            <th style="text-align: center">Código</th>
-                            <th style="text-align: center">Produto</th>
-                            <th style="text-align: center">$Valor</th>
-                            <th style="text-align: center">QTD</th>
-
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                        <?php
-
-
-                        // ---------------------------------------------------------------AQUI
-                        // ---------------------------------------------------------------AQUI
-                        // ---------------------------------------------------------------AQUI
-                        // ---------------------------------------------------------------AQUI
-                        // ---------------------------------------------------------------AQUI
-
-
-
-                        include "scripts\config.php";
-                        $sql = "SELECT * FROM venda";
-                        $query = $mysqli->query($sql);
-                        while ($dados = $query->fetch_array()) {
-                        ?>
-
-
+                    <table class="table" id="mytable">
+                        <thead>
                             <tr>
-                                <td style="text-align: center">
-                                    <?php echo $dados['data']; ?>
-                                </td>
-
-                                <td style="text-align: center">
-                                    <?php echo $dados['codigo']; ?>
-                                </td>
-                                <td style="text-align: center">
-                                    <?php echo $dados['produto']; ?>
-                                </td>
-                                <td style="text-align: center">
-                                    <?php echo $dados['valor']; ?>
-                                </td>
-                                <td style="text-align: center">
-                                    <?php echo $dados['qtd']; ?>
-                                </td>
-
+                                <th style="text-align: center">Data</th>
+                                <th style="text-align: center">Código</th>
+                                <th style="text-align: center">Produto</th>
+                                <th style="text-align: center">$Valor</th>
+                                <th style="text-align: center">QTD</th>
 
                             </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
-            </section>
+                        </thead>
 
+                        <tbody>
+
+                            <?php
+
+
+                            // ---------------------------------------------------------------AQUI
+                            // ---------------------------------------------------------------AQUI
+                            // ---------------------------------------------------------------AQUI
+                            // ---------------------------------------------------------------AQUI
+                            // ---------------------------------------------------------------AQUI
+
+
+
+                            include "scripts\config.php";
+                            $sql = "SELECT * FROM venda";
+                            $query = $mysqli->query($sql);
+                            while ($dados = $query->fetch_array()) {
+                            ?>
+
+
+                                <tr>
+                                    <td style="text-align: center">
+                                        <?php echo $dados['data']; ?>
+                                    </td>
+
+                                    <td style="text-align: center">
+                                        <?php echo $dados['codigo']; ?>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <?php echo $dados['produto']; ?>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <?php echo $dados['valor']; ?>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <?php echo $dados['qtd']; ?>
+                                    </td>
+
+
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </section>
+
+            </div>
         </div>
-    </div>
 
-</section>
+    </section>
 
 
 

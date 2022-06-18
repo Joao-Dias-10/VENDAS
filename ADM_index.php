@@ -1,8 +1,10 @@
+<?php include "scripts\Functions.php"; ?>
 <!DOCTYPE html>
 <!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
 <html lang="pt-BR" dir="ltr">
 
 <head>
+
     <meta charset="UTF-8">
     <title>ORACULO EXC</title>
     <link rel="stylesheet" href="iuricode\assets\css\style.css">
@@ -100,7 +102,7 @@
         <center>
             <H2>DASHBOARD ADM PRODUTOS </H2>
             <div>
-            <div class="card">
+                <div class="card">
                     <div class="card__image-holder">
                         <img class="card__image" src="iuricode\assets\img\python.gif" alt="wave" />
                     </div>
@@ -114,21 +116,8 @@
                             <center>
                                 <small>
                                     <?php
-                                    // pegar qtd do banco e subtrair
-                                    $servidor = "127.0.0.1";
-                                    $usuario = "root";
-                                    $senha = "";
-                                    $banco = "vendas";
 
-                                    //String de coneção
-                                    $conn = new mysqli($servidor, $usuario, $senha, $banco);
-
-
-                                    $sql = "SELECT SUM(qtd) as qtd FROM venda WHERE codigo <> 0";
-                                    $sql = $conn->query($sql);
-                                    $row = $sql->fetch_assoc();
-                                    $soma = $row['qtd'];
-                                    echo "<h5>" . $soma . "</h5>";
+                                    echo QTD_VENDIDA();
 
                                     ?>
                                 </small>
@@ -152,22 +141,7 @@
                             <center>
                                 <small>
                                     <?php
-                                    // pegar qtd do banco e subtrair
-                                    $servidor = "127.0.0.1";
-                                    $usuario = "root";
-                                    $senha = "";
-                                    $banco = "vendas";
-
-                                    //String de coneção
-                                    $conn = new mysqli($servidor, $usuario, $senha, $banco);
-
-
-                                    $sql = "SELECT SUM(qtd) as qtd FROM venda WHERE codigo <> 0 and MONTH(data)= '06'";
-                                    $sql = $conn->query($sql);
-                                    $row = $sql->fetch_assoc();
-                                    $soma = $row['qtd'];
-                                    echo "<h5>" . $soma . "</h5>";
-
+                                    echo QTD_VENDIDA_MES();
                                     ?>
                                 </small>
                             </center>
@@ -190,22 +164,7 @@
                             <center>
                                 <small>
                                     <?php
-                                    // pegar qtd do banco e subtrair
-                                    $servidor = "127.0.0.1";
-                                    $usuario = "root";
-                                    $senha = "";
-                                    $banco = "vendas";
-
-                                    //String de coneção
-                                    $conn = new mysqli($servidor, $usuario, $senha, $banco);
-
-
-                                    $sql = "SELECT SUM(qtd) as qtd FROM venda WHERE codigo <> 0 and DAY(data)= '16'";
-                                    $sql = $conn->query($sql);
-                                    $row = $sql->fetch_assoc();
-                                    $soma = $row['qtd'];
-                                    echo "<h5>" . $soma . "</h5>";
-
+                                    echo QTD_VENDIDA_DIA();
                                     ?>
                                 </small>
                             </center>
@@ -215,7 +174,7 @@
 
                 </div>
 
-                
+
                 <div class="card">
                     <div class="card__image-holder">
                         <img class="card__image" src="iuricode\assets\img\python.gif" alt="wave" />
@@ -229,9 +188,9 @@
                             TOP 10 VENDIDOS
                             <center>
                                 <small>
-Verifique aqui ➱
+                                    Verifique aqui ➱
                                 </small>
-                                
+
                             </center>
                         </h2>
                     </div>
@@ -244,7 +203,7 @@ Verifique aqui ➱
                         </div>
                     </div>
                 </div>
-  
+
                 <div class="card">
                     <div class="card__image-holder">
                         <img class="card__image" src="iuricode\assets\img\python.gif" alt="wave" />
@@ -258,23 +217,7 @@ Verifique aqui ➱
                             ESTOQUE
                             <center>
                                 <small>
-                                    <?php
-                                    // pegar qtd do banco e subtrair
-                                    $servidor = "127.0.0.1";
-                                    $usuario = "root";
-                                    $senha = "";
-                                    $banco = "vendas";
-
-                                    //String de coneção
-                                    $conn = new mysqli($servidor, $usuario, $senha, $banco);
-
-
-                                    $sql = "SELECT SUM(qtd) as qtd FROM estoque WHERE codigo <> 0";
-                                    $sql = $conn->query($sql);
-                                    $row = $sql->fetch_assoc();
-                                    $som = $row['qtd'];
-                                    echo "<h5>" . $som . "</h5>";
-                                    ?>
+                                    <?php echo ESTOQUE(); ?>
                                 </small>
                             </center>
                         </h2>
@@ -304,21 +247,7 @@ Verifique aqui ➱
                                 <small>
                                     <?php
 
-                                    $servidor = "127.0.0.1";
-                                    $usuario = "root";
-                                    $senha = "";
-                                    $banco = "vendas";
 
-                                    //String de coneção
-                                    $conn = new mysqli($servidor, $usuario, $senha, $banco);
-                                    $sql = "SELECT * FROM produtos";
-                                    if ($result = mysqli_query($conn, $sql)) {
-                                        $rowcount = mysqli_num_rows($result);
-                                        echo "<h5>0" . $rowcount . "</h5>";
-                                    }
-
-                                    //echo "<p><h5>Quantidade de Relatórios</p>" .
-                                    //5 . "</h5>";
                                     ?>
                                 </small>
                             </center>

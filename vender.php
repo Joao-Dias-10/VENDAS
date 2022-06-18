@@ -93,27 +93,27 @@
     </li>
     <li>
     <li>
-            <a href="Vendas.php">
-                <i class='bx bx-cart-alt'></i>
-                <span class="links_name">VENDIDO</span>
-            </a>
-            <span class="tooltip">VENDIDO</span>
-        </li>
-       
-        <!-- <li>
+      <a href="Vendas.php">
+        <i class='bx bx-cart-alt'></i>
+        <span class="links_name">VENDIDO</span>
+      </a>
+      <span class="tooltip">VENDIDO</span>
+    </li>
+
+    <!-- <li>
             <a href="CadrastEstoq.php">
           <i class='bx bx-folder'></i>    
           <span class="links_name">ATUALIZAR ESTOQUE</span>
         </a>
         <span class="tooltip">ATUALIZAR ESTOQUE</span>
       </li> -->
-      <li>
-            <a href="vender.php">
-          <i class='bx bx-cart-alt'></i>    
-          <span class="links_name">VERDER</span>
-        </a>
-        <span class="tooltip">VERDER</span>
-      </li>
+    <li>
+      <a href="vender.php">
+        <i class='bx bx-cart-alt'></i>
+        <span class="links_name">VERDER</span>
+      </a>
+      <span class="tooltip">VERDER</span>
+    </li>
     <!-- <li>
         <a href="#">
           <i class='bx bx-heart'></i>

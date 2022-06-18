@@ -56,12 +56,12 @@
     <div class="container-fluid">
 
       <form action="scripts\cadasstrarUser.php" method="post" enctype="multipart/form-data">
-      <label for="Nome" class="form-label required ">Função</label>
-      <select class="form-control" id="funcao" name="funcao" required="">
-                        <option value="Vendedor"></option>
-                        <option value="Administrador">Administrador</option>
-                        <option value="Vendedor">Vendedor</option>
-                    </select>
+        <label for="Nome" class="form-label required ">Função</label>
+        <select class="form-control" id="funcao" name="funcao" required="">
+          <option value="Vendedor"></option>
+          <option value="Administrador">Administrador</option>
+          <option value="Vendedor">Vendedor</option>
+        </select>
 
         <div class="col-md-12">
 
