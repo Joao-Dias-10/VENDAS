@@ -1,4 +1,4 @@
-<?php include "Estrutura\header.php"; ?>
+<?php include "Estrutura\ADM_MENU.php"; ?>
 <style>
   .s {
     border-radius: 8px;
@@ -40,85 +40,9 @@
     width: 100%;
   }
 </style>
-<?php include "Estrutura\menu.php"; ?>
 
-<div class="sidebar">
-  <div class="logo-details">
-    <i class='bx bxl-c-plus-plus icon'></i>
-    <div class="logo_name">SISTEMA</div>
-    <i class='bx bx-menu' id="btn"></i>
-  </div>
-  <ul class="nav-list">
-    <li>
-      <a href="ADM_index.php">
-        <i class='bx bx-grid-alt'></i>
-        <span class="links_name">DASHBOARD</span>
-      </a>
-      <span class="tooltip">DASHBOARD</span>
-    </li>
-    <li>
-      <a href="ADM_produtos.php">
-        <i class='bx bx-folder'></i>
-        <span class="links_name">PRODUTOS</span>
-      </a>
-      <span class="tooltip">PRODUTOS</span>
-    </li>
-    <li>
-      <a href="ADM_VENDAS.php">
-        <i class='bx bx-cart-alt'></i>
-        <span class="links_name">VENDAS</span>
-      </a>
-      <span class="tooltip">VENDAS</span>
-    </li>
-    <li>
-      <a href="ADM_estoque.php">
-        <i class='bx bx-cart-alt'></i>
-        <span class="links_name">ESTOQUE</span>
-      </a>
-      <span class="tooltip">ESTOQUE</span>
-    </li>
-    <li>
-      <a href="ADM_usernew.php">
-        <i class='bx bx-user'></i>
-        <span class="links_name">NOVO USUÁRIO</span>
-      </a>
-      <span class="tooltip">NOVO USUÁRIO</span>
-    </li>
-    <li>
-      <a href="ADM_CadrastEstoq.php">
-        <i class='bx bx-folder'></i>
-        <span class="links_name">ATUALIZAR ESTOQUE</span>
-      </a>
-      <span class="tooltip">ATUALIZAR ESTOQUE</span>
-    </li>
-    <li>
-      <a href="ADM_cadastrarProduto.php">
-        <i class='bx bx-cart-alt'></i>
-        <span class="links_name">CADASTRAR PRODUTO</span>
-      </a>
-      <span class="tooltip">CADASTRAR PRODUT</span>
-    </li>
 
-    <a href="Login.php">
-      <li class="profile">
 
-        <div class="profile-details">
-          <img src="iuricode\assets\img\logo.png" alt="profileImg">
-
-          <div class="name_job">
-            <div class="name">Desenvolvido</div>
-            <div class="job">Por João Dias</div>
-          </div>
-        </div>
-
-        <i class='bx bx-log-out' id="log_out"></i>
-
-      </li>
-    </a>
-  </ul>
-</div>
-
-<section class="home-section">
 
   <div class="container-fluid">
     <section id="caixa">

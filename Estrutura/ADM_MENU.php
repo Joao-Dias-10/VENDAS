@@ -1,10 +1,12 @@
+<?php session_start();?>
+<?php include "scripts\Verifica.php";?>
 <!DOCTYPE html>
 <!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
 <html lang="pt-BR" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
-    <title>ORACULO EXC</title>
+    <title>VENDAS</title>
     <link rel="stylesheet" href="iuricode\assets\css\style.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>

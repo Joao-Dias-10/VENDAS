@@ -1,4 +1,5 @@
-<?php include "Estrutura\header.php"; ?>
+
+<?php include "Estrutura\ADM_MENU.php"; ?>
 <style>
   .s {
     border-radius: 8px;
@@ -40,7 +41,7 @@
     width: 100%;
   }
 </style>
-<?php include "Estrutura\ADM_MENU.php"; ?>
+
 <div class="container-fluid">
   <section id="caixa">
 

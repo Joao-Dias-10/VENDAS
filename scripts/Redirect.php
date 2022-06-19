@@ -8,12 +8,13 @@
 <body>
 
     <?php
+    session_start();
     // error_reporting(E_ALL);
     // ini_set('display_errors', '0');
     $Usuario = $_POST['email'];
     $Senha = $_POST['Senha'];
 
-    function grupo($Usuario,$Senha)
+    function grupo($Usuario, $Senha)
     {
         include "config.php";
         $sql = "SELECT usuario FROM login WHERE usuario='$Usuario' and senha='$Senha'";
@@ -21,40 +22,34 @@
         $total = mysqli_num_rows($query);
 
         return $total;
-        
     }
 
-    if (grupo($Usuario,$Senha) <> 0) {
+    if (grupo($Usuario, $Senha) <> 0) {
         $adm = 'Administrador';
         //existe
-        function grupo2($Usuario,$Senha,$adm)
+        function grupo2($Usuario, $Senha, $adm)
         {
             include "config.php";
             $sql = "SELECT usuario FROM login WHERE usuario='$Usuario' and senha='$Senha' and funcao = '$adm'";
             $query = $mysqli->query($sql);
             $total2 = mysqli_num_rows($query);
-    
+
             return $total2;
         }
-        
 
-        if (grupo2($Usuario,$Senha,$adm) <> 0) {
-    ?>
-            <script language='javascript'>
-                window.location.href = "../ADM_index.php";
-            </script>
 
-        <?php
+        if (grupo2($Usuario, $Senha, $adm) <> 0) {
+            $_SESSION['usuario'] = $Usuario;
+            header('Location: ../ADM_index.php');
+            exit();
         } else {
-        ?>
-            <script language='javascript'>
-                window.location.href = "../Produtos.php";
-            </script>
 
-        <?php
+            $_SESSION['usuario'] = $Usuario;
+            header('Location: ../Produtos.php');
+            exit();
         }
     } else {
-        ?>
+    ?>
         <script language='javascript'>
             Swal.fire({
                 icon: 'warning',

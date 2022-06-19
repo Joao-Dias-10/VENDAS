@@ -1,4 +1,4 @@
-<?php include "Estrutura\header.php"; ?>
+<?php include "Estrutura\ADM_MENU.php"; ?>
 <style>
   .s {
     border-radius: 8px;
@@ -38,7 +38,7 @@
     border-radius: 25px;
   }
 </style>
-<?php include "Estrutura\ADM_MENU.php"; ?>
+
 
 
 

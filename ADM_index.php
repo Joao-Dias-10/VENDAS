@@ -1,4 +1,8 @@
+<?php session_start();?>
+<?php include "scripts\Verifica.php";?>
 <?php include "scripts\Functions.php"; ?>
+
+
 <!DOCTYPE html>
 <!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
 <html lang="pt-BR" dir="ltr">
@@ -6,7 +10,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>ORACULO EXC</title>
+    <title>VENDAS</title>
     <link rel="stylesheet" href="iuricode\assets\css\style.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -101,6 +105,7 @@
     <section class="home-section">
         <center>
             <H2>DASHBOARD ADM PRODUTOS </H2>
+          
             <div>
                 <div class="card">
                     <div class="card__image-holder">
@@ -246,7 +251,7 @@
                             <center>
                                 <small>
                                     <?php
-
+                                            echo P_CADASTRADOS();
 
                                     ?>
                                 </small>

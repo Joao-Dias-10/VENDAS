@@ -1,4 +1,4 @@
-<?php include "Estrutura\header.php"; ?>
+<?php include "Estrutura\ADM_MENU.php"; ?>
 <!---https://developer.mozilla.org/pt-BR/docs/Web/CSS/margin--->
 <!---https://www.visualdicas.com.br/programacao/php/30-como-obter-o-ultimo-registro-id-de-uma-tabela-mysql-com-php#:~:text=Obter%20o%20%C3%BAltimo%20registro%20por,o%20nome%20da%20sua%20tabela.-->
 <style>
@@ -40,7 +40,7 @@
         border-radius: 25px;
     }
 </style>
-<?php include "Estrutura\ADM_MENU.php"; ?>
+
 
 <section class="TABELA">
     <center>
