@@ -83,7 +83,7 @@
                 <span class="tooltip">CADASTRAR PRODUT</span>
             </li>
 
-            <a href="Login.php">
+            <a href="scripts\logout.php">
                 <li class="profile">
 
                     <div class="profile-details">

@@ -137,7 +137,7 @@
         </a>
         <span class="tooltip">Saved</span>
       </li> -->
-        <a href="Login.php">
+        <a href="scripts\logout.php">
             <li class="profile">
 
                 <div class="profile-details">
