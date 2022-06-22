@@ -48,19 +48,20 @@
                 <span class="tooltip">PRODUTOS</span>
             </li>
             <li>
+                <a href="ADM_estoque.php">
+                    <i class='bx bx-folder'></i>
+                    <span class="links_name">ESTOQUE</span>
+                </a>
+                <span class="tooltip">ESTOQUE</span>
+            </li>
+            <li>
                 <a href="ADM_VENDAS.php">
                     <i class='bx bx-cart-alt'></i>
                     <span class="links_name">VENDAS</span>
                 </a>
                 <span class="tooltip">VENDAS</span>
             </li>
-            <li>
-                <a href="ADM_estoque.php">
-                    <i class='bx bx-cart-alt'></i>
-                    <span class="links_name">ESTOQUE</span>
-                </a>
-                <span class="tooltip">ESTOQUE</span>
-            </li>
+
             <li>
                 <a href="ADM_usernew.php">
                     <i class='bx bx-user'></i>
@@ -68,21 +69,14 @@
                 </a>
                 <span class="tooltip">NOVO USUÁRIO</span>
             </li>
-            <li>
-                <a href="ADM_CadrastEstoq.php">
-                    <i class='bx bx-folder'></i>
-                    <span class="links_name">ATUALIZAR ESTOQUE</span>
-                </a>
-                <span class="tooltip">ATUALIZAR ESTOQUE</span>
-            </li>
-            <li>
-                <a href="ADM_cadastrarProduto.php">
-                    <i class='bx bx-cart-alt'></i>
-                    <span class="links_name">CADASTRAR PRODUTO</span>
-                </a>
-                <span class="tooltip">CADASTRAR PRODUT</span>
-            </li>
-
+            <!-- <li>
+            <a href="ADM_CadrastEstoq.php">
+          <i class='bx bx-folder'></i>    
+          <span class="links_name">ATUALIZAR ESTOQUE</span>
+        </a>
+        <span class="tooltip">ATUALIZAR ESTOQUE</span>
+      </li> -->
+      
             <a href="scripts\logout.php">
                 <li class="profile">
 
@@ -104,7 +98,6 @@
 
     <section class="home-section">
         <center>
-            <H2>DASHBOARD ADM PRODUTOS </H2>
           
             <div>
                 <div class="card">

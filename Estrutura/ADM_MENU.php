@@ -16,7 +16,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="iuricode\assets\img\icons\excel (1).png" />
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -58,19 +61,20 @@
                 <span class="tooltip">PRODUTOS</span>
             </li>
             <li>
+                <a href="ADM_estoque.php">
+                    <i class='bx bx-folder'></i>
+                    <span class="links_name">ESTOQUE</span>
+                </a>
+                <span class="tooltip">ESTOQUE</span>
+            </li>
+            <li>
                 <a href="ADM_VENDAS.php">
                     <i class='bx bx-cart-alt'></i>
                     <span class="links_name">VENDAS</span>
                 </a>
                 <span class="tooltip">VENDAS</span>
             </li>
-            <li>
-                <a href="ADM_estoque.php">
-                    <i class='bx bx-cart-alt'></i>
-                    <span class="links_name">ESTOQUE</span>
-                </a>
-                <span class="tooltip">ESTOQUE</span>
-            </li>
+
             <li>
                 <a href="ADM_usernew.php">
                     <i class='bx bx-user'></i>
@@ -78,20 +82,13 @@
                 </a>
                 <span class="tooltip">NOVO USUÁRIO</span>
             </li>
-            <li>
+            <!-- <li>
             <a href="ADM_CadrastEstoq.php">
           <i class='bx bx-folder'></i>    
           <span class="links_name">ATUALIZAR ESTOQUE</span>
         </a>
         <span class="tooltip">ATUALIZAR ESTOQUE</span>
-      </li>
-      <li>
-            <a href="ADM_cadastrarProduto.php">
-          <i class='bx bx-cart-alt'></i>    
-          <span class="links_name">CADASTRAR PRODUTO</span>
-        </a>
-        <span class="tooltip">CADASTRAR PRODUTO</span>
-      </li>
+      </li> -->
       
             <a href="scripts\logout.php">
                 <li class="profile">
